@@ -7,7 +7,9 @@ import Layout from '../components/layouts/main'
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <ChakraProvider resetCSS theme={theme}>
-      <ColorModeProvider options={{ useSystemColorMode: true }}>
+      <ColorModeProvider
+        options={{ useSystemColorMode: theme.config.useSystemColorMode }}
+      >
         <Layout router={router}>
           <Component {...pageProps} />
         </Layout>
