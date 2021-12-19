@@ -11,7 +11,7 @@ const breakpoints = createBreakpoints({
 })
 
 const config: ThemeConfig = {
-  initialColorMode: 'light',
+  initialColorMode: 'system',
   useSystemColorMode: false
 }
 
