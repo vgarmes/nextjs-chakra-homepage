@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { Box, Container } from '@chakra-ui/react'
 import { Router } from 'next/router'
+import Navbar from '../navbar'
 
 interface MainProps {
   router: Router
@@ -25,6 +26,8 @@ const Main: React.FC<MainProps> = ({ children, router }) => {
         <meta property="og:image" content="/card.png" />
         <title>Victor Garcia - Portfolio</title>
       </Head>
+
+      <Navbar path={router.asPath} />
 
       <Container maxW="container.md" pt={14}>
         {children}
