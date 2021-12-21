@@ -1,5 +1,12 @@
 import type { NextPage } from 'next'
-import { Container, Box, Heading, Text } from '@chakra-ui/react'
+import {
+  Container,
+  Box,
+  Heading,
+  Text,
+  useColorMode,
+  Button
+} from '@chakra-ui/react'
 
 const Home: NextPage = () => {
   return (
@@ -13,7 +20,7 @@ const Home: NextPage = () => {
           <Heading as="h2" variant="page-title">
             Victor Garcia
           </Heading>
-          <Text>Front End Developer and Game Enthusiast</Text>
+          <Text>Front End Developer</Text>
         </Box>
       </Box>
     </Container>
