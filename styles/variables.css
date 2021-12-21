@@ -1,0 +1,11 @@
+body.chakra-ui-light {
+  --color-text: var(--chakra-colors-gray-200);
+  --color-background: hsl(0, 0%, 100%);
+  --color-inactive-link: var(--chakra-colors-gray-200);
+}
+
+body.chakra-ui-dark {
+  --color-text: var(--chakra-colors-whiteAlpha-900);
+  --color-background: hsl(240, 4%, 13%);
+  --color-inactive-link: var(--chakra-colors-whiteAlpha-900);
+}

@@ -1,7 +1,9 @@
-import { extendTheme, ThemeConfig } from '@chakra-ui/react'
+import { extendTheme, ThemeConfig, ThemeOverride } from '@chakra-ui/react'
 import { createBreakpoints } from '@chakra-ui/theme-tools'
-
-const fonts = { mono: `'Menlo', monospace` }
+import fonts from './fonts'
+import styles from './styles'
+import colors from './colors'
+import { Heading, Link } from './components'
 
 const breakpoints = createBreakpoints({
   sm: '40em',
@@ -15,13 +17,16 @@ const config: ThemeConfig = {
   useSystemColorMode: false
 }
 
-const theme = extendTheme({
+const overrides: ThemeOverride = {
   config,
-  colors: {
-    black: '#16161D'
-  },
+  styles,
+  colors,
   fonts,
   breakpoints,
+  components: {
+    Heading,
+    Link
+  },
   icons: {
     logo: {
       path: (
@@ -42,6 +47,6 @@ const theme = extendTheme({
       viewBox: '0 0 3000 3163'
     }
   }
-})
+}
 
-export default theme
+export default extendTheme(overrides)
