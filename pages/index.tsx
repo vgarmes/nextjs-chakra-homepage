@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import NextLink from 'next/link'
 import {
   Container,
   Box,
@@ -6,8 +7,13 @@ import {
   Text,
   useColorModeValue,
   Button,
-  Image
+  Image,
+  Link
 } from '@chakra-ui/react'
+import Section from '../components/section'
+import Paragraph from '../components/paragraph'
+import { ChevronRightIcon } from '@chakra-ui/icons'
+import { BioSection, BioYear } from '../components/bio'
 
 const Home: NextPage = () => {
   return (
@@ -50,6 +56,51 @@ const Home: NextPage = () => {
           />
         </Box>
       </Box>
+      <Section delay={0.1}>
+        <Heading as="h3" variant="section-title">
+          Work
+        </Heading>
+        <Paragraph>
+          Hello! My name is Victor. I am a multi-disciplinary engineer whose
+          interest in web development started a few years ago when I was
+          involved in the back-end development of a monitoring app at my old
+          job. After that experience, I decided I wanted to learn more about web
+          development so I started an online course on full stack development in
+          Ruby on Rails. Ever since then, I have been constantly learning and
+          developing my personal projects.
+        </Paragraph>
+        <Box align="center" my={4}>
+          <NextLink href="/works" passHref>
+            <Link>
+              <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
+                My portfolio
+              </Button>
+            </Link>
+          </NextLink>
+        </Box>
+      </Section>
+      <Section delay={0.2}>
+        <Heading as="h3" variant="section-title">
+          Bio
+        </Heading>
+        <BioSection>
+          <BioYear>1989</BioYear>
+          Born in Barcelona, Spain.
+        </BioSection>
+        <BioSection>
+          <BioYear>2021</BioYear>
+          Front end developer
+        </BioSection>
+      </Section>
+
+      <Section delay={0.3}>
+        <Heading as="h3" variant="section-title">
+          I love
+        </Heading>
+        <Paragraph>
+          Videogames, Music, <Link href="https://artstation.com">Art</Link>
+        </Paragraph>
+      </Section>
     </Container>
   )
 }
