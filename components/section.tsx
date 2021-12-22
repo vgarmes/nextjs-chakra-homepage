@@ -11,7 +11,7 @@ const FadeIn = chakra(motion.div, {
 }) as ComponentWithAs<'div', MotionProps>
 
 interface SectionProps {
-  delay: number
+  delay?: number
 }
 
 const Section: React.FC<SectionProps> = ({ children, delay = 0 }) => (
