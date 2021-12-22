@@ -4,14 +4,24 @@ import {
   Box,
   Heading,
   Text,
-  useColorMode,
-  Button
+  useColorModeValue,
+  Button,
+  Image
 } from '@chakra-ui/react'
 
 const Home: NextPage = () => {
   return (
     <Container>
-      <Box borderRadius="lg" align="center" p={3} mb={6}>
+      <Box
+        borderRadius="lg"
+        textAlign="center"
+        p={3}
+        mb={6}
+        bg={useColorModeValue(
+          'subtleBackground.light',
+          'subtleBackground.dark'
+        )}
+      >
         Hello, Im Victor
       </Box>
 
@@ -21,6 +31,23 @@ const Home: NextPage = () => {
             Victor Garcia
           </Heading>
           <Text>Front End Developer</Text>
+        </Box>
+        <Box
+          flexShrink={0}
+          mt={{ base: 4, md: 0 }}
+          ml={{ md: 6 }}
+          align="center"
+        >
+          <Image
+            borderColor="whiteAlpha.800"
+            borderWidth={2}
+            borderStyle="solid"
+            maxWidth="100px"
+            display="inline-block"
+            borderRadius="full"
+            src="/images/profile.jpg"
+            alt="profile image"
+          />
         </Box>
       </Box>
     </Container>
