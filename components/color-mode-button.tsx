@@ -1,16 +1,39 @@
+import { useState, useEffect } from 'react'
 import { IconButton, useColorMode, useColorModeValue } from '@chakra-ui/react'
 import { SunIcon, MoonIcon } from '@chakra-ui/icons'
+import { AnimatePresence, motion } from 'framer-motion'
 
 const ColorModeButton = () => {
-  const { toggleColorMode } = useColorMode()
+  const [hasMounted, setHasMounted] = useState(false)
+  const { colorMode, toggleColorMode } = useColorMode()
+
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+
+  // this prevents the button from animating on mounting
+  if (!hasMounted) {
+    return null
+  }
 
   return (
-    <IconButton
-      aria-label="Toggle theme"
-      colorScheme={useColorModeValue('purple', 'orange')}
-      icon={useColorModeValue(<MoonIcon />, <SunIcon />)}
-      onClick={toggleColorMode}
-    />
+    <AnimatePresence exitBeforeEnter initial={false}>
+      <motion.div
+        style={{ display: 'inline-block' }}
+        key={colorMode}
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: 20, opacity: 0 }}
+        transition={{ duration: 0.2 }}
+      >
+        <IconButton
+          aria-label="Toggle theme"
+          colorScheme={colorMode === 'light' ? 'purple' : 'orange'}
+          icon={colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+          onClick={toggleColorMode}
+        />
+      </motion.div>
+    </AnimatePresence>
   )
 }
 
