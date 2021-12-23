@@ -11,7 +11,7 @@ const ColorModeButton = () => {
     setHasMounted(true)
   }, [])
 
-  // this prevents the button from animating on mounting
+  // this prevents the button from animating on mounting if the color mode is different than the one in SSR
   if (!hasMounted) {
     return null
   }
