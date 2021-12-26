@@ -5,7 +5,7 @@ import { Box, Text, LinkBox, LinkOverlay } from '@chakra-ui/react'
 interface GridItemProps {
   href: string
   title: string
-  thumbnail: string
+  thumbnail: StaticImageData
 }
 
 export const GridItem: React.FC<GridItemProps> = ({
