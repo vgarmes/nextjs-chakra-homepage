@@ -7,7 +7,7 @@ NextJS - Chakra UI template project based on [Takuya Matsuyama's homepage](https
 ## Develop
 
 > You'll need [Node](https://nodejs.org/en/) and
-> [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed
+> [yarn](https://yarnpkg.com/getting-started) installed
 
 - run `yarn` to install dependencies
 - run `yarn dev` to start development environment
